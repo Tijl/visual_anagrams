@@ -4,6 +4,7 @@ import numpy as np
 
 from .view_identity import IdentityView
 from .view_flip import FlipView
+from .view_hflip import HFlipView
 from .view_rotate import Rotate180View, Rotate90CCWView, Rotate90CWView
 from .view_negate import NegateView
 from .view_skew import SkewView
@@ -23,6 +24,7 @@ from .view_scale import ScaleView
 VIEW_MAP = {
     'identity': IdentityView,
     'flip': FlipView,
+    'hflip': HFlipView,
     'rotate_cw': Rotate90CWView,
     'rotate_ccw': Rotate90CCWView,
     'rotate_180': Rotate180View,
