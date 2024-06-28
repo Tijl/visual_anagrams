@@ -9,15 +9,15 @@ class HFlipView(BaseView):
         pass
 
     def view(self, im):
-        return torch.flip(im, [0])
+        return torch.flip(im, [2])
 
     def inverse_view(self, noise):
-        return torch.flip(noise, [0])
+        return torch.flip(noise, [2])
 
     def make_frame(self, im, t):
         im_size = im.size[0]
         frame_size = int(im_size * 1.5)
-        theta = -t * 180
+        theta = -t * 360
 
         # TODO: Technically not a flip, change this to a homography later
         frame = Image.new('RGB', (frame_size, frame_size), (255, 255, 255))
